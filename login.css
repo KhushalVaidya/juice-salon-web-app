@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    overflow-x: hidden;
+ /* background: url('backnew.jpg') no-repeat center fixed;  */
+    background-size:cover;
+    justify-content: center;
+     background-image: url('beauty-salon.jpg'); 
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+.outer{
+    width:40%;
+    margin-left: 30%;
+   
+    height: 250px;
+    border: 1px solid ;
+    padding: 40px;
+    background-color:rgba(197, 211, 239, 0.775);
+}
+
+
+
+ 
+
+input:hover{
+    border: 1px solid orange;
+}
+
+h1{
+    margin-left: 35px; 
+    margin-top: 35px;
+    text-align: center;
+}
+
+
+h3{
+    margin-top:15px ;
+    color: black;
+}
+
+.div1 a{
+    text-decoration: none;
+  color: gray;
+
+}
+
+.div1 a:hover{
+    color: orange;
+}
+
+.div2{
+    margin-top: 40px;
+}
+
+ input{
+    margin-top: 15px;
+}
+
+
+button{
+    background-color: orange;
+    border: none;
+    height: 40px;
+    width:70px;
+    font-size: 1rem;
+    margin:10px
+}
+
+
+button:hover{
+    background-color: black;
+    color: orange;
+}
+
+
+
+
+
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgb(221, 214, 214);
+}
+.row-column1{
+   font-size: 20px;
+    width: 50%;
+    text-align: center;
+
+}
+
+h6{
+    margin-top: 10px;
+    color: gray;
+}
+
+
+.row-column2{
+    font-size: 20px;
+     width: 50%; 
+}
+
+.row-column1 ul li a{
+color: gray;
+text-decoration: none;
+}
+
+.row-column1 ul li a:hover{
+    color: orange;
+    
+ 
+    }
+.Subscribe{
+    color: white;
+    background-color: rgba(245, 132, 28, 0.727);
+    border-radius: 25px;
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+.Subscribe:hover{
+    background-color: white;
+    color: orange;
+}
+
+.ending{
+    height: 100px;
+    width: 100%;
+   
+}
+
+.ending {
+    text-align: center;
+  
+    
+    padding: 15px;
+}
+
+ .ending ul li a {
+    color: gray;
+    display: flex;
+    justify-content: space-evenly;
+ text-decoration: none;
+        
+    margin: 5px; 
+ }
+
+ .ending ul li a:hover{
+    columns: orange;
+ }

@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="BookAppoinment.css">
+    <title>Book An Appointment-JuiceSalons</title>
+    <link rel="icon" href="titleICon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <nav>
+        <div id="navbarmaindiv">
+        <div id="navbarlogo">
+            <img src="logo.png" alt="Juice Logo">
+        </div>
+        <div id="navbarlist">
+            <ul><li><a href="/">Book An Appointment</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="/buyProducts.html" target="_blank">Shop</a></li>
+                <li><a href="">Offers</a></li>
+                <li><a href="">Locate US</a></li>
+                <li><a href="">Franchise</a></li>
+                <li><a href="javascript:void(0)" onclick="handleLogout()" id="logOut">Log Out</a></li>
+               
+            </ul>
+        </div>
+
+        <div class="action_bar">
+            
+
+            <div class="action_container">
+                <span class="material-symbols-outlined action_icon">favorite</span>
+                <span class="action_name">Wishlist</span>
+            </div>
+
+            <div class="action_container">
+                <span class="material-symbols-outlined action_icon">shopping_bag</span>
+                <span class="action_name">Bag</span> 
+             </div>
+        </div>
+
+
+      </nav>
+    </nav>
+
+    <div class="BookAppoinment">
+        <div class="heading"> 
+            <h1 style="color: gray; margin: 10px;">Book an Appointment</h1>
+            <button type="button" onclick="bookAppointment()" class="book">Book Appointment</button>
+        </div>
+
+        <div class="form">
+            <div class="Column1">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name *" required>
+            </div>
+            <div class="Column2">
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name *" required>
+            </div>
+        </div>
+
+        <div class="Column2">
+            <input type="email" id="email" name="email" placeholder="Email*" required>
+        </div>
+
+        <div class="city-form">
+            <label for="Service">Service:</label> 
+            <select name="service" id="Service" style="width: 60%;height: 35px;" required>
+                <option value="" disabled selected hidden>Select Service</option>
+                <option value="hair_wash">Hair Wash</option>
+                <option value="hair_cut">Hair Cut</option>
+                <option value="hair_colouring">Hair Colouring</option>
+                <option value="hair_styling">Hair Styling</option>
+            </select>
+        </div>
+
+        <div class="Appointment">
+            <div class="Appointment-column1">
+                <label style="color: black; font-size: 1rem;">
+                    Appointment Time 
+                    <input type="datetime-local" id="appointmentTime" name="appointmentTime" required>
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comments" placeholder="Enter Your Comments"></textarea>
+    </div>
+
+    <footer>
+        <div class="row"> 
+    
+            <div class="row-column1">
+                <h4>Information</h4>
+                <ul>
+                    <li>
+                        <h6><a href="AboutUs">AboutUs</a></h6>
+                        <h6><a href="ContactUs">ContactUS</a></h6>
+                        <h6><a href="SalonFinder">SalonFinder</a></h6>
+                        <h6><a href="PrivacyPolicy">PrivacyPolicy</a></h6>
+                        <h6><a href="ReturnPolicy">ReturnPolicy</a></h6>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="row-column2">
+        
+                <h3 style="padding-bottom: 30px;">Newsletter</h3>
+            <form action="/login">
+            
+            <input type="text" id="username" name="username" placeholder="Email *" required  style="width:60% ;height: 30px; padding: 5px;">
+            <br>
+            <input  class="Subscribe" type="submit" value="Subscribe" style="height: 30px; width: 20%;">
+            </form>
+            </div>  
+        </div>
+        <div class="ending">
+            <p style="text-shadow:4px 0px 4px;"> Copyright © 2021. Juice Salons.</p>
+        
+            <ul>
+        <li>
+                    <h5><a href="Facebook">Facebook</a></h5>   
+                    <h5><a href="Twitter">Twitter</a></h5>   
+                    <h5><a href="Instagram">Instagram</a></h5> 
+        </li>
+            </ul>
+                
+        </div> 
+    </footer>
+
+    <script>
+
+
+function handleLogout() {
+        const confirmLogout = confirm("Are you sure you want to log out?");
+        if (confirmLogout) {
+            // Clear any stored session/local storage data if needed
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Redirect to login page or home page
+            window.location.href = "/Login.html"; // Change this to your login page URL
+        }}
+
+        async function bookAppointment() {
+            // Get form values
+            const firstName = document.getElementById("firstname").value;
+            const lastName = document.getElementById("lastname").value;
+            const email = document.getElementById("email").value;
+            const service = document.getElementById("Service").value;
+            const appointmentTime = document.getElementById("appointmentTime").value;
+            const comments = document.getElementById("comments").value;
+
+            // Validate required fields
+            if (!firstName || !lastName || !email || !service || !appointmentTime) {
+                alert("Please fill in all required fields");
+                return;
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address");
+                return;
+            }
+
+            const appointmentData = {
+                firstName,
+                lastName,
+                email,
+                service,
+                appointmentTime,
+                comments
+            };
+
+            try {
+                const response = await fetch("http://localhost:8080/BookAppointment/Book", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(appointmentData),
+                });
+
+                if (response.ok) {
+                    const bookedAppointment = await response.json();
+                    alert("Appointment booked successfully!");
+                 //clear form 
+                    document.getElementById("firstname").value = "";
+                    document.getElementById("lastname").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("Service").selectedIndex = 0;
+                    document.getElementById("appointmentTime").value = "";
+                    document.getElementById("comments").value = "";
+                } else {
+                    const errorData = await response.text();
+                    alert("Failed to book appointment: " + errorData);
+                }
+            } catch (error) {
+                console.error("Error booking appointment:", error);
+                alert("An error occurred while booking the appointment. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

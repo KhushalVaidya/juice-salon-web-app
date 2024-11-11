@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="signUp.css">
+    <title>SignUp-JuiceSalons</title>
+    <link rel="icon" href="titleIcon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <h1>REGISTER</h1>
+
+    <div class="outer">
+        <div class="div1">
+            <h3>Username</h3>
+            <input type="text" id="username" placeholder=" Enter Username" style="width: 80%; height: 30px;" required>
+            <h3>Mobile Number</h3>
+            <input type="text" id="mobile" placeholder="  Enter Mobile Number" style="width: 80%; height: 30px;" required>
+            <h3>Email</h3>
+            <input type="email" id="email" placeholder="  Enter Email" style="width: 80%; height: 30px;" required>
+            <h3>Create Password</h3>
+            <input type="password" id="password" placeholder="  Enter Password" style="width: 80%; height: 30px;" required>
+            <br>
+
+            <button onclick="registerUser()">Register</button>
+            <div class="sign-up-link">
+                <span>Already have an account? </span>
+                <a href="./Login.html" style="color: rgb(8, 67, 8);"> - Login</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        async function registerUser() {
+            const username = document.getElementById('username').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            const payload = {
+                Name: username,
+                mobileNumber: mobile,
+                email: email,
+                password: password
+            };
+    
+            try {
+                const response = await fetch('http://localhost:8080/user/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+    
+                if (response.ok) {
+                    
+                    const contentType = response.headers.get("content-type");
+                    if (contentType && contentType.includes("application/json")) {
+                         const data = await response.json();
+                          console.log('JSON response received:', data);
+                    } else {
+                        const textData = await response.text();
+                         console.log('Text response received:', textData);
+                    }
+                    
+    
+                    alert('Registration successful!');
+                    window.location.href = './Login.html';
+                } else {
+                    const errorData = await response.json();
+                     console.log('Error in response:', errorData);
+                    alert('Registration failed: ' + (errorData.message || 'Unknown error'));
+                       
+                }
+            } catch (error) {
+                console.log('Error in fetch operation:', error.message);
+            }
+        }
+    </script> 
+    
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+    <title>Login-JuiceSalons</title>
+    <link rel="icon" href="titleICon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+<body>
+
+
+      <h1 >LOGIN</h1>
+
+      <!-- <div class="outer">
+        <div class="div1">
+          
+            <h3>MobileNumber</h3>
+            <input type="text" name="mobileNumber" placeholder="Enter Mobile Number" Style="width: 80%;height: 30px;" id="mobile">
+            <h3>Password </h3>
+            <input type="text" name="username" id="password" placeholder="Enter Password" style="width: 80%; height: 30px;" required>
+           <br>
+
+           <button onclick="loginUser()" >Login</button>
+           <div class="sign-up-link">
+            <span>For New User</span>
+            <a href="/signUp.html" style="color: green;"> - Signup</a>
+           </div>
+
+         
+           
+        </div>
+        </div> -->
+
+        <div class="outer">
+            <div class="div1">
+                <h3>Mobile Number</h3>
+                <input type="text" id="mobile" name="mobileNumber" placeholder="  Enter Mobile Number" style="width: 80%; height: 30px;">
+                <h3>Password</h3>
+                <input type="password" id="password" name="password" placeholder="  Enter Password" style="width: 80%; height: 30px;" required>
+                <br>
+        
+                <button onclick="loginUser()">Login</button>
+                <div class="sign-up-link">
+                    <span>For New User</span>
+                    <a href="/signUp.html" style="color: green;"> - Signup</a>
+                </div>
+            </div>
+        </div>
+        
+       
+        <script>
+            async function loginUser() {
+               
+                const mobile = document.getElementById('mobile').value;
+                const password = document.getElementById('password').value;
+        
+                try {
+                    
+                    const response = await fetch(`http://localhost:8080/user/login?mobileNumber=${mobile}&password=${password}`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+        
+                    if (response.ok) {
+                        const data = await response.json();
+                        alert('Login successful!');
+                      
+                        window.location.href = './index.html';
+                    } else {
+                        const errorData = await response.json();
+                        alert('Login failed: ' + (errorData.message || 'Unknown error'));
+                    }
+                } catch (error) {
+                    alert('Error: ' + error.message);
+                }
+            }
+        </script>
+        
+    
+            
+
+
+
+  
+    
+        
+    </body>
+    </html>

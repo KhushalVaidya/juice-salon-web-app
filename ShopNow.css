@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  
+    /* background: url('backnew.jpg') no-repeat center fixed; 
+    background-size:cover;
+    justify-content: center;
+     background-image: url('beauty-salon.jpg'); */
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#navbarmaindiv{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgb(230, 130, 54);    
+}
+
+ #navbarlogo img{
+    width: 200px;
+    height: 30px;
+    margin: 5px;
+    padding-top: 10px;
+}
+
+#navbarlist ul li a:hover{
+    color :rgb(65, 65, 246);
+}
+#navbarlist{
+    padding-top: 20px;   
+}
+
+#navbarlist ul li{
+   list-style: none;
+   display: inline;
+   margin-left: 20px;
+   text-align: right;
+  
+}
+#navbarlist ul li a{
+   text-decoration: none;
+   color: white;
+   font-size: 1.05rem;
+}
+
+
+
+
+.shopping-Session{
+    width: 100%;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+}
+
+
+
+.row1{
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: space-around;
+    margin-right:40px ;
+}
+
+.shopping-Session span{
+    color: orange;
+}
+
+.shopping-Session span:hover{
+    color: black;
+}
+.shopping1 img{
+    width: 100%;
+    height: 60%;
+}
+
+.shopping-Session h4{
+    text-align: center;
+}
+
+.shopping-Session h4:hover{
+    color: orange;
+}
+.shopping1 {
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+.button{
+    height: 50px;
+    width: 110%;
+    display: flex;
+    
+}
+
+.shopping2 .button{
+    margin-top: 20px;
+}
+
+.Rs{
+    text-align: center;
+    margin-left: 39%;
+}
+
+.shopping1:hover {
+    border: 1px solid orange; /* or any color you prefer */
+   /* transform: scale(1.03);*/
+}
+
+
+
+.shopping2{
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: border 0.3s ease-out;
+   
+}
+.shopping2:hover{
+    border: 1px solid orange;
+    transform: scale(1.03);
+}
+
+.shopping2 img{
+    width: 100%;
+    height: 60%;
+}
+.shopping3{
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: border 0.3s ease-out;
+   
+}
+.shopping3:hover{
+    border: 1px solid orange;
+    transform: scale(1.03);
+}
+
+
+.shopping3 img{
+    width: 100%;
+    height: 60%;
+}
+
+
+.shopping-Session button{
+    width: 100px;
+    height: 30px;
+    margin: 15px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    transition:0.1 ease-out;
+}
+
+
+
+.shopping-Session button:hover{
+    transform: scale(1.03);
+}
+
+
+
+
+/* footer */
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgb(221, 214, 214);
+}
+.row-column1{
+   font-size: 20px;
+    width: 50%;
+    text-align: center;
+
+}
+
+h6{
+    margin-top: 10px;
+    color: gray;
+}
+
+
+.row-column2{
+    font-size: 20px;
+     width: 50%; 
+}
+
+.row-column1 ul li a{
+color: gray;
+text-decoration: none;
+}
+
+.row-column1 ul li a:hover{
+    color: orange;
+    
+ 
+    } 
+.Subscribe{
+    color: white;
+    background-color: rgba(245, 132, 28, 0.727);
+    border-radius: 25px;
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+.Subscribe:hover{
+    background-color: white;
+    color: orange;
+}
+
+.ending{
+    height: 100px;
+    width: 100%;
+   
+}
+
+.ending {
+    text-align: center;
+  
+    
+    padding: 15px;
+}
+
+ .ending ul li a {
+    color: gray;
+    display: flex;
+    justify-content: space-evenly;
+ text-decoration: none;
+        
+    margin: 5px; 
+ }
+
+ .ending ul li a:hover{
+    columns: orange;
+ }
