@@ -20,7 +20,7 @@
                 <li><a href="">Offers</a></li>
                 <li><a href="">Locate US</a></li>
                 <li><a href="">Franchise</a></li>
-                <li><a href="">Log Out</a></li>
+                <li><a href="javascript:void(0)" onclick="handleLogout()" id="logOut">Log Out</a></li>
                 <a href="" class="fa-solid fa-cart-shopping" style="margin-left: 15px; color: white;"></a>
                 <a href="" class="fa-solid fa-heart" style="text-decoration: none; margin-left: 15px; color: rgb(234, 5, 5);"></a>
         
@@ -206,5 +206,20 @@
     <script src="cart.js"></script>
     <script src="items.js"></script>
     <script src="shopNow.js"></script>
+<script>
+    
+function handleLogout() {
+        const confirmLogout = confirm("Are you sure you want to log out?");
+        if (confirmLogout) {
+            // Clear stored session
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Redirect to login page
+            window.location.href = "/Login.html"; 
+        }}
+
+</script>>
+
     </body>
     </html>
